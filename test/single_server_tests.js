@@ -2,8 +2,7 @@
 
 var co = require('co'),
   f = require('util').format,
-  assert = require('assert'),
-  Promise = require('bluebird');
+  assert = require('assert');
 
 describe('Server', function() {
   this.timeout(50000);
@@ -12,7 +11,7 @@ describe('Server', function() {
   var managers = [];
 
   afterEach(function() {
-    return Promise.map(managers, manager => manager.stop()).then(() => (managers = []));
+    return Promise.all(managers.map(manager => manager.stop())).then(() => (managers = []));
   });
 
   describe('manager', function() {

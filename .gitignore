@@ -30,3 +30,4 @@ node_modules
 
 # Ignore VS Code project-specific settings
 .vscode
+.idea
